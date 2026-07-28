@@ -47,6 +47,18 @@ Output: Next.js 默认输出
 Node.js: Vercel 当前支持的 LTS 版本
 ```
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSisyphusSQ%2Fsisyphussq-homepage&project-name=sisyphussq-homepage&repository-name=sisyphussq-homepage)
+
+首次连接账号后，在项目根目录执行：
+
+```bash
+npx vercel@58.1.0 link --scope suqing
+npx vercel@58.1.0 deploy
+```
+
+第二条命令只创建 Preview，不会发布 Production。`design/`、`design-qa.md`
+和测试覆盖率产物已通过 `.vercelignore` 排除，不进入部署上传包。
+
 计划使用：
 
 - GitHub 仓库：`SisyphusSQ/sisyphussq-homepage`
