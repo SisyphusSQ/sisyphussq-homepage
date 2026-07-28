@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SisyphusSQ Homepage
 
-## Getting Started
+SisyphusSQ 的个人主页，聚焦数据库工程、可靠变更、工具沉淀和 AI 工作流实践。
 
-First, run the development server:
+## 技术栈
+
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Vitest + Testing Library
+- Vercel
+
+## 本地开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+默认访问 `http://localhost:3000`。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 质量门禁
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run verify
+```
 
-## Learn More
+该命令依次执行单元测试、TypeScript 检查、ESLint 和生产构建。
 
-To learn more about Next.js, take a look at the following resources:
+## 内容位置
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 主页结构：`src/app/page.tsx`
+- 项目、文章和站点资料：`src/content/site.ts`
+- SEO 元数据：`src/content/site-metadata.ts`
+- 视觉样式：`src/app/globals.css`
+- 原始设计稿：`design/reference/sisyphussq-homepage-v3.png`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+首页中的 Slogan 和“我想说”仍是明确的占位文案，后续可以只修改内容数据，不必调整整体页面结构。
 
-## Deploy on Vercel
+## 部署
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+项目按 Vercel 的 Next.js 默认构建流程部署：
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+Build Command: npm run build
+Output: Next.js 默认输出
+Node.js: Vercel 当前支持的 LTS 版本
+```
+
+计划使用：
+
+- GitHub 仓库：`SisyphusSQ/sisyphussq-homepage`
+- 正式域名：`https://sisyphuslab.cn`
+- `www.sisyphuslab.cn`：重定向到根域名
+
+先验证 Vercel Preview；确认页面后再创建 Production 并按 Vercel 实际返回值配置 DNSPod。
