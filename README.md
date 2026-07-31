@@ -39,32 +39,28 @@ npm run verify
 Java / Python 技术栈，以及 MySQL、MongoDB、Redis、OceanBase、向量数据库
 与 DTS 的开发和运维实践。经验年限由当前年份减去 2018 动态计算。
 
-## 部署
+## 自动部署
 
-项目按 Vercel 的 Next.js 默认构建流程部署：
+项目通过 GitHub 与 Vercel 的 Git Integration 自动交付：
+
+- Pull Request：GitHub Actions 执行 `npm run verify`，Vercel 创建 Preview。
+- 合并到 `main`：Vercel 自动创建 Production Deployment，并将结果回写到
+  GitHub 的 Deployment 与 Commit Status。
+- `main` 受分支保护：必须通过 Pull Request 和 `verify` 检查后才能合并；个人
+  仓库不强制其他人审批。
+
+Vercel 使用 Next.js 默认构建流程：
 
 ```text
 Build Command: npm run build
 Output: Next.js 默认输出
-Node.js: Vercel 当前支持的 LTS 版本
+Node.js: 24.x
 ```
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSisyphusSQ%2Fsisyphussq-homepage&project-name=sisyphussq-homepage&repository-name=sisyphussq-homepage)
 
-首次连接账号后，在项目根目录执行：
-
-```bash
-npx vercel@58.1.0 link --scope suqing
-npx vercel@58.1.0 deploy
-```
-
-第二条命令只创建 Preview，不会发布 Production。`design/`、`design-qa.md`
-和测试覆盖率产物已通过 `.vercelignore` 排除，不进入部署上传包。
-
-计划使用：
-
 - GitHub 仓库：`SisyphusSQ/sisyphussq-homepage`
-- 正式域名：`https://sisyphuslab.cn`
+- Production：`https://sisyphuslab.cn`
 - `www.sisyphuslab.cn`：重定向到根域名
-
-先验证 Vercel Preview；确认页面后再创建 Production 并按 Vercel 实际返回值配置 DNSPod。
+- `design/`、`design-qa.md` 和测试覆盖率产物通过 `.vercelignore` 排除，不进入
+  部署上传包。
