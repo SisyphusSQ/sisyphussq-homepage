@@ -1,6 +1,6 @@
 import { CodexPulseSection } from "@/components/codex-pulse-section";
-import { DatabaseSection } from "@/components/database-section";
 import { HeroSection } from "@/components/hero-section";
+import { OpenSourceSection } from "@/components/open-source-section";
 import { PersonalNoteSection } from "@/components/personal-note-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -24,8 +24,8 @@ export default function Home() {
       <main id="main">
         <HeroSection />
         <PersonalNoteSection />
-        <DatabaseSection />
         <ProjectsSection />
+        <OpenSourceSection />
         <WritingSection />
         <CodexPulseSection />
       </main>

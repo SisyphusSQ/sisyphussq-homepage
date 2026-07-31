@@ -5,9 +5,9 @@ export function ProjectsSection() {
   return (
     <section className="projects-section" id="projects">
       <div className="section shell">
-        <p className="eyebrow">03 / SELECTED PRACTICE</p>
+        <p className="eyebrow">02 / SELECTED PRACTICE</p>
         <div className="section-heading projects-heading">
-          <h2>三个数据库实践样本</h2>
+          <h2>数据库工具</h2>
           <p>
             不罗列所有仓库。
             <br />

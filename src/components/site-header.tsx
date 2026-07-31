@@ -3,8 +3,7 @@ import { githubProfile } from "@/content/site";
 import { ExternalLink } from "./external-link";
 
 const navItems = [
-  ["我想说", "#note"],
-  ["数据库实践", "#database"],
+  ["关于我", "#note"],
   ["项目", "#projects"],
   ["文章", "#writing"],
 ] as const;

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "SisyphusSQ · 数据库工程与可靠工具";
+export const alt = "SisyphusSQ · DBA 与数据库工程";
 export const size = {
   width: 1200,
   height: 630,
@@ -51,7 +51,7 @@ export default async function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div style={{ color: "#275df5", fontSize: 22, letterSpacing: 3 }}>
-            PERSONAL NOTE / DATABASE PRACTICE
+            DBA / DATABASE ENGINEERING / DEVELOPMENT
           </div>
           <div
             style={{
@@ -63,8 +63,8 @@ export default async function OpenGraphImage() {
               lineHeight: 1.05,
             }}
           >
-            <span>数据库工程，</span>
-            <span>是在变化里守住确定性。</span>
+            <span>DBA，</span>
+            <span>也做开发。</span>
           </div>
         </div>
         <div
@@ -76,7 +76,7 @@ export default async function OpenGraphImage() {
             fontSize: 22,
           }}
         >
-          <span>数据库工程 · Go · 工具构建</span>
+          <span>2018 至今 · Go / Java / Python</span>
           <span>sisyphuslab.cn</span>
         </div>
       </div>

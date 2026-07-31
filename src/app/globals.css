@@ -196,7 +196,6 @@ a:focus-visible {
 
 .eyebrow,
 .section-topline,
-.item-label,
 .tag-list,
 .mono-note,
 .project-index,
@@ -297,7 +296,7 @@ a:focus-visible {
 
 .focus-panel h2 {
   margin-top: 18px;
-  font-size: 34px;
+  font-size: clamp(27px, 2.42vw, 34px);
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.18;
@@ -388,35 +387,33 @@ a:focus-visible {
 }
 
 .note-copy {
-  max-width: 1010px;
+  min-width: 0;
 }
 
-.note-copy h2 {
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.note-placeholder {
-  max-width: 990px;
-  margin-top: 38px;
-  font-size: clamp(38px, 4vw, 56px);
+.note-statement {
+  max-width: 13ch;
+  font-size: clamp(48px, 4.8vw, 68px);
   font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 1.16;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
 }
 
-.placeholder-label {
+.note-statement span {
+  display: block;
+}
+
+.experience-label {
   display: flex;
   align-items: center;
   gap: 17px;
-  margin-top: 34px;
+  margin-top: 42px;
   color: #8f99aa;
   font-family: var(--font-ibm-plex-mono), monospace;
   font-size: 10px;
   letter-spacing: 0.11em;
 }
 
-.placeholder-label span {
+.experience-label span {
   width: 56px;
   height: 2px;
   background: var(--accent);
@@ -425,15 +422,6 @@ a:focus-visible {
 .section {
   padding-block: 112px;
   scroll-margin-top: 92px;
-}
-
-.database-section {
-  min-height: 650px;
-  background: var(--surface);
-}
-
-.database-section .section {
-  padding-block: 101px;
 }
 
 .section-heading {
@@ -451,8 +439,7 @@ a:focus-visible {
   line-height: 1.08;
 }
 
-.section-heading > p,
-.section-heading > div > p:first-child {
+.section-heading > p {
   color: var(--muted);
   font-size: 16px;
 }
@@ -462,51 +449,6 @@ a:focus-visible {
   color: var(--text);
   font-size: 10px;
   letter-spacing: 0.15em;
-}
-
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 70px;
-  border-top: 1px solid var(--line);
-}
-
-.principles-grid article {
-  min-height: 190px;
-  padding: 34px 36px 20px 0;
-  border-right: 1px solid var(--line);
-}
-
-.principles-grid article + article {
-  padding-left: 36px;
-}
-
-.principles-grid article:last-child {
-  border-right: 0;
-}
-
-.item-label {
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.item-label span {
-  margin-right: 22px;
-}
-
-.principles-grid h3 {
-  margin-top: 24px;
-  font-size: 26px;
-  font-weight: 400;
-  letter-spacing: -0.025em;
-}
-
-.principles-grid article > p:last-child {
-  max-width: 330px;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 15px;
 }
 
 .projects-section {
@@ -597,6 +539,115 @@ a:focus-visible {
   display: grid;
   place-items: center;
   color: var(--accent);
+}
+
+.open-source-section {
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  background: var(--accent-soft);
+}
+
+.open-source-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.5fr) minmax(0, 1fr);
+  gap: clamp(72px, 10vw, 164px);
+  align-items: start;
+  padding-block: 108px;
+}
+
+.open-source-heading h2 {
+  margin-top: 18px;
+  font-size: clamp(42px, 4vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.open-source-heading h2 span {
+  display: block;
+}
+
+.open-source-project {
+  border-top: 1px solid #9cb3ef;
+  padding-top: 28px;
+}
+
+.open-source-meta,
+.open-source-list-label {
+  color: var(--accent);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.open-source-project h3 {
+  margin-top: 30px;
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: clamp(42px, 4.2vw, 60px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.open-source-project h3 a {
+  text-decoration-color: transparent;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 150ms ease;
+}
+
+.open-source-project h3 a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.open-source-subtitle {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.open-source-list-label {
+  margin-top: 46px;
+}
+
+.open-source-list {
+  display: grid;
+  gap: 13px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+}
+
+.open-source-list li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 13px;
+}
+
+.open-source-list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-top: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.open-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 34px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.open-source-link svg {
+  width: 15px;
+  height: 15px;
 }
 
 .writing-section {
@@ -793,6 +844,10 @@ a:focus-visible {
     grid-template-columns: 110px minmax(360px, 1.15fr) minmax(270px, 0.85fr);
   }
 
+  .open-source-grid {
+    gap: 72px;
+  }
+
   .codex-grid {
     grid-template-columns: 210px minmax(0, 1fr) 180px;
     gap: 50px;
@@ -863,6 +918,10 @@ a:focus-visible {
     max-width: 520px;
   }
 
+  .focus-panel h2 {
+    font-size: 34px;
+  }
+
   .location {
     margin-top: 42px;
   }
@@ -876,20 +935,26 @@ a:focus-visible {
     font-size: 72px;
   }
 
-  .note-placeholder {
-    font-size: clamp(32px, 6.8vw, 46px);
+  .note-statement {
+    font-size: clamp(42px, 8vw, 52px);
   }
 
   .section {
     padding-block: 86px;
   }
 
-  .database-section .section {
-    padding-block: 86px;
-  }
-
   .projects-section .section {
     padding-bottom: 110px;
+  }
+
+  .open-source-section {
+    min-height: 0;
+  }
+
+  .open-source-grid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+    padding-block: 86px;
   }
 
   .writing-section .section {
@@ -906,27 +971,6 @@ a:focus-visible {
   .writing-heading > p {
     min-width: 0;
     justify-self: start;
-  }
-
-  .principles-grid {
-    grid-template-columns: 1fr;
-    margin-top: 54px;
-  }
-
-  .principles-grid article,
-  .principles-grid article + article {
-    min-height: 0;
-    padding: 30px 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .principles-grid article:last-child {
-    border-bottom: 0;
-  }
-
-  .principles-grid article > p:last-child {
-    max-width: 560px;
   }
 
   .project-list,
@@ -1058,7 +1102,7 @@ a:focus-visible {
   }
 
   .focus-panel h2 {
-    font-size: 29px;
+    font-size: clamp(25px, 7.4vw, 29px);
   }
 
   .personal-note {
@@ -1085,21 +1129,40 @@ a:focus-visible {
     font-size: 64px;
   }
 
-  .note-copy h2 {
-    font-size: 24px;
+  .note-statement {
+    font-size: clamp(38px, 10vw, 44px);
+    line-height: 1.16;
   }
 
-  .note-placeholder {
-    margin-top: 26px;
-    font-size: 34px;
+  .open-source-grid {
+    gap: 44px;
+    padding-block: 74px;
   }
 
-  .placeholder-label {
+  .open-source-heading h2 {
+    font-size: 39px;
+  }
+
+  .open-source-project {
+    padding-top: 24px;
+  }
+
+  .open-source-project h3 {
+    font-size: 46px;
+  }
+
+  .open-source-list {
+    gap: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .experience-label {
     align-items: flex-start;
     font-size: 9px;
   }
 
-  .placeholder-label span {
+  .experience-label span {
     flex: 0 0 40px;
     margin-top: 7px;
   }

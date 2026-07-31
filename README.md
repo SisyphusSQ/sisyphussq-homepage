@@ -35,7 +35,9 @@ npm run verify
 - 视觉样式：`src/app/globals.css`
 - 原始设计稿：`design/reference/sisyphussq-homepage-v3.png`
 
-首页中的 Slogan 和“我想说”仍是明确的占位文案，后续可以只修改内容数据，不必调整整体页面结构。
+首页以 DBA 与数据库工程为职业主线，展示自 2018 年起的工作经验、Go /
+Java / Python 技术栈，以及 MySQL、MongoDB、Redis、OceanBase、向量数据库
+与 DTS 的开发和运维实践。经验年限由当前年份减去 2018 动态计算。
 
 ## 部署
 

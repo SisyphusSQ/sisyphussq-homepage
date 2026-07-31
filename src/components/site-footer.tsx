@@ -8,9 +8,9 @@ export function SiteFooter() {
         <div>
           <p className="eyebrow inverse">ONE MORE THING</p>
           <p className="footer-statement">
-            还想再说一句的话，
+            把系统看清，
             <br />
-            留在这里。
+            把经验写成工具。
           </p>
         </div>
         <ExternalLink
@@ -22,8 +22,8 @@ export function SiteFooter() {
         </ExternalLink>
       </div>
       <div className="shell footer-bottom">
-        <span>SisyphusSQ　/　数据库工程与工具构建</span>
-        <span>SUQING · SHANGHAI · 2026</span>
+        <span>SisyphusSQ　/　DBA 与数据库工程</span>
+        <span>SUQING · SHANGHAI · 2018—PRESENT</span>
       </div>
     </footer>
   );

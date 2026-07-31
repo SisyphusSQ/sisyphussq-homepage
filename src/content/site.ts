@@ -1,5 +1,11 @@
 export const githubProfile = "https://github.com/SisyphusSQ";
 
+export const careerStartYear = 2018;
+
+export function formatExperienceSummary(currentYear: number) {
+  return `${careerStartYear} 至今 · ${currentYear - careerStartYear} 年经验`;
+}
+
 export const focusAreas = [
   {
     index: "01",
@@ -8,37 +14,13 @@ export const focusAreas = [
   },
   {
     index: "02",
-    title: "安全变更",
-    description: "边界、回滚语义与验证路径",
+    title: "稳妥变更",
+    description: "明确影响范围，做好验证和回退",
   },
   {
     index: "03",
     title: "沉淀工具",
     description: "把人工经验变成可复用能力",
-  },
-] as const;
-
-export const databasePrinciples = [
-  {
-    index: "01",
-    label: "看清系统",
-    title: "先让证据说话",
-    description:
-      "从运行状态、慢查询、索引与容量信号开始，建立能够被复查的判断依据。",
-  },
-  {
-    index: "02",
-    label: "安全变更",
-    title: "把边界写进流程",
-    description:
-      "将风险、回滚、事务和并发边界显式化，让每一次变化都有可验证的出口。",
-  },
-  {
-    index: "03",
-    label: "沉淀工具",
-    title: "让经验可以复用",
-    description:
-      "把重复判断封装成工具与工作流，让可靠性不依赖某一次临场发挥。",
   },
 ] as const;
 
@@ -49,7 +31,7 @@ export const projects = [
     subtitle: "MongoDB 集群概览与只读诊断",
     description:
       "把分片、复制、索引、容量与慢查询信号放在同一条证据链上，帮助工程师更快看清集群状态。",
-    tags: ["MONGODB", "GO", "DIAGNOSTICS"],
+    tags: ["MONGODB", "GO", "DIAGNOSTICS", "SDK"],
     href: "https://github.com/SisyphusSQ/mongo-overview-tool",
   },
   {
@@ -67,10 +49,33 @@ export const projects = [
     subtitle: "MySQL DML 的受控批处理",
     description:
       "围绕分片、并发和事务边界组织批量 DML，把大规模数据操作拆成可控制、可观察的步骤。",
-    tags: ["MYSQL", "GO", "BATCHING"],
+    tags: ["MYSQL", "GO", "BATCHING", "TIDB", "OCEANBASE", "SDK"],
     href: "https://github.com/SisyphusSQ/go-oak-chunk",
   },
+  {
+    index: "04",
+    name: "mongo-checker",
+    subtitle: "MongoDB 迁移后的数据校验",
+    description:
+      "对比源端与目标端的库、集合、文档和可选元数据差异，用于核对 MongoDB 数据迁移结果。",
+    tags: ["MONGODB", "GO", "MIGRATION", "VALIDATION"],
+    href: "https://github.com/SisyphusSQ/mongo-checker",
+  },
 ] as const;
+
+export const mongoShakeContribution = {
+  name: "MongoShake",
+  subtitle: "MongoDB oplog 数据同步工具",
+  href: "https://github.com/alibaba/MongoShake",
+  pullRequestsHref:
+    "https://github.com/alibaba/MongoShake/pulls?q=is%3Apr+is%3Amerged+author%3ASisyphusSQ",
+  contributions: [
+    "增加按 oplog 操作类型过滤的配置。",
+    "新增 Prometheus /metrics，并补齐同步延迟与队列指标。",
+    "让不同高可用同步任务使用各自的 election id。",
+    "使用 Pebble 重做全量同步时的本地 oplog 队列，让异常重启后可以接着跑。",
+  ],
+} as const;
 
 export const articles = [
   {
@@ -110,7 +115,7 @@ export const codexPulse = {
   name: "Codex Pulse",
   href: "https://github.com/SisyphusSQ/codex-pulse",
   description:
-    "Codex Pulse 是一款本地优先的 macOS 工具，用来观察 Codex 使用情况、配额、会话活动与数据健康。它不是主页的主角，但延续了我对“先看清系统”的偏好。",
+    "Codex Pulse 是一款本地优先的 macOS 工具，用来观察 Codex 使用情况、配额、会话活动与数据健康。",
   signals: ["USAGE / QUOTA", "SESSIONS / ACTIVITY", "DATA / HEALTH"],
 } as const;
 
@@ -121,10 +126,22 @@ export const profileData = {
     "@type": "Person",
     name: "SisyphusSQ",
     alternateName: "Suqing",
+    jobTitle: "DBA",
     description:
-      "关注数据库工程、可靠变更、工具沉淀与 AI 工作流实践。",
+      "自 2018 年起从事数据库与中间件的开发和运维，主要使用 Go、Java、Python。",
     image: "https://sisyphuslab.cn/avatar.jpg",
     url: "https://sisyphuslab.cn/",
     sameAs: [githubProfile],
+    knowsAbout: [
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "OceanBase",
+      "向量数据库",
+      "DTS",
+      "Go",
+      "Java",
+      "Python",
+    ],
   },
 } as const;

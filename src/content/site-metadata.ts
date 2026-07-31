@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL("https://sisyphuslab.cn"),
-  title: "SisyphusSQ · 数据库工程与可靠工具",
+  title: "SisyphusSQ · DBA 与数据库工程",
   description:
-    "SisyphusSQ 的个人主页：记录数据库工程、可靠变更、工具沉淀与 AI 工作流实践。",
+    "SisyphusSQ 的个人主页：自 2018 年起从事数据库与中间件的开发和运维，主要使用 Go、Java、Python。",
   alternates: {
     canonical: "/",
   },
@@ -13,16 +13,16 @@ export const siteMetadata: Metadata = {
     locale: "zh_CN",
     url: "/",
     siteName: "SisyphusSQ",
-    title: "SisyphusSQ · 数据库工程与可靠工具",
+    title: "SisyphusSQ · DBA 与数据库工程",
     description:
-      "记录数据库工程、可靠变更、工具沉淀与 AI 工作流实践。",
+      "自 2018 年起从事数据库与中间件的开发和运维，主要使用 Go、Java、Python。",
     images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SisyphusSQ · 数据库工程与可靠工具",
+    title: "SisyphusSQ · DBA 与数据库工程",
     description:
-      "记录数据库工程、可靠变更、工具沉淀与 AI 工作流实践。",
+      "自 2018 年起从事数据库与中间件的开发和运维，主要使用 Go、Java、Python。",
     images: ["/opengraph-image"],
   },
 };
