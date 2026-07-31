@@ -88,6 +88,10 @@ test("shows four database tools with direct GitHub links", () => {
   expect(
     screen.getByRole("heading", { level: 2, name: "数据库工具" }),
   ).toBeInTheDocument();
+  expect(screen.queryByText("不罗列所有仓库。")).not.toBeInTheDocument();
+  expect(
+    screen.queryByText("只留下最能说明工作方法的项目。"),
+  ).not.toBeInTheDocument();
 
   for (const [name, href] of projects) {
     expect(screen.getByRole("link", { name })).toHaveAttribute("href", href);

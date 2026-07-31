@@ -8,11 +8,6 @@ export function ProjectsSection() {
         <p className="eyebrow">02 / SELECTED PRACTICE</p>
         <div className="section-heading projects-heading">
           <h2>数据库工具</h2>
-          <p>
-            不罗列所有仓库。
-            <br />
-            只留下最能说明工作方法的项目。
-          </p>
         </div>
         <div className="project-list">
           {projects.map((project) => (
